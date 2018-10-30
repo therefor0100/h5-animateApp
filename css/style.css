@@ -1,0 +1,388 @@
+﻿/*页面样式*/
+@charset "utf-8";
+/*100%或none 移动端关闭字体大小自动调整功能*/
+html,body{height: 100%}
+
+body { -webkit-text-size-adjust:none;}
+
+/* 移动端禁止长按链接与图片弹出系统默认菜单 */
+a,img { border:none;-webkit-touch-callout: none;}
+a{cursor: pointer}
+
+/*禁用了复制粘贴功能*/
+/*body{-webkit-user-select: none;user-select:none;}*/
+
+/*修正chrome表单自动填充后,input文本框的背景会变成偏黄色的 */
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;background-color:transparent;}
+
+/*清除浮动*/
+.clearfix{zoom:1;}
+.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;font-size: 0;}
+
+/*文字溢出裁切*/
+.textcut{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+/*清除ul,ol,dl,li,dt,dd 默认列表样式*/
+ul,ol,dl,li,dt,dd { list-style:none; }
+
+/*================================基本信息==============================*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset,form, label, legend, table, caption, tbody,tfoot, thead, tr, th, td, article, aside,canvas, details, embed, figure, figcaption,footer, header, hgroup, menu, nav, output,ruby, section, summary, time, mark, audio,video,input{ margin:0; padding:0; }
+body{ font-family:'Microsoft YaHei',"微软雅黑", Arial, "Segoe UI", sans-serif; font-size:12px; line-height:1.6em; color:#333; }
+/* a标签reset */
+a {color:#333; text-decoration:none; -webkit-transition:all .5s ease; -webkit-tap-highlight-color: rgba(0,0,0,0);/*适用于ios，重设链接元素或可点击元素的背景*/}
+a:hover{-webkit-transition:all .5s ease;text-decoration:none;}
+a:focus{text-decoration:none;}
+/*input标签reset*/
+input{-webkit-appearance: none}
+input[type="number"]{-moz-appearance:textfield;}
+input[type="text"]{-webkit-appearance: none;}
+input:-moz-placeholder {color: #999;} /* Mozilla Firefox 4 to 18 */
+input::-moz-placeholder {color: #999;}/* Mozilla Firefox 19+ */
+input:-ms-input-placeholder,textarea:-ms-input-placeholder {color: #999;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #999;}
+.fl{float: left;}
+.fr{float: right;}
+/*字体引入*/
+@font-face{
+	font-family: myFirstFont;
+	src:
+		url('../fonts/迷你简菱心.TTF'),
+		url('../fonts/迷你简菱心.otf'),
+		url('../fonts/迷你简菱心.eot'),
+		url('../fonts/迷你简菱心.woff'); 
+}
+/*body, td, th, samp, dfn ,input,h4{ font-family: 'myFirstFont';}*/
+/*箭头*/
+@keyframes Arrow{
+	0%{transform: rotateX(0,-10px);}
+	100%{transform: rotateX(0,10px);}
+}
+.Arrow{text-align: center;position: absolute;bottom: 25px;;width: 100%;}
+.Arrow .arrow{width: 0.6rem;display: block;margin: 0 auto;}
+.Arrow img{
+	-webkit-animation:upArrow 1.5s infinite ease-in-out;
+	-moz-animation:upArrow 1.5s infinite ease-in-out;
+	-ms-animation:upArrow 1.5s infinite ease-in-out;
+	animation:upArrow 1.5s infinite ease-in-out}
+
+/*页面样式  公共*/
+.body{background: url(../img/bg01.gif) no-repeat top center;background-size: cover;padding:0 4vw;}
+.section {padding-top: 4vh;position: relative;}
+.section img{max-width: 100%;max-height: 100%;;}
+.section .logo{width: 54vw;}
+.section .music{position: absolute;right: 5px;top:4vh;}
+.section .music audio{opacity: 0;}
+/*公司介绍*/
+.introduce .imgs{opacity: 0;}
+.introduce .video{width: 6.1rem;margin: 5vh auto;height: 3.6rem;position: relative;}
+.introduce .video .links{display: block;width: 100%;height: 100%;text-align: center;;}
+.introduce .video video{width: 100%;height: 100%;;}
+.introduce .video .begin{position: absolute;left: 50%;top: 50%;width: 1.36rem;transform: translate(-50%,-50%);}
+.introduce .img01{width: 6.4rem; margin: 0 auto;}
+.introduce .img02{width: 4rem;margin: 0.3rem auto 0;}
+.introduce .img03{width: 6rem;margin: -1.4rem auto 0;}
+/*页面二*/
+.section.official .list{margin-top: 4vh;position: relative;}
+.section.official .imgs,.section.official .txt,.section.official .line{opacity: 0;}
+.section.official .line{width: 60vw;margin-top: 21%;/*margin-top: 16.1vh;*/margin-left: 17.3vw;}
+.section.official .line img{max-width: 100%;max-height: 100%;}
+.section.official .list .imgs{position: absolute;width: 1.5rem;height: 1.5rem; border-radius: 50%;background: url(../img/circle01.png) no-repeat center;background-size: contain;text-align: center;}
+.section.official .list .rules{display: inline-block;vertical-align: middle;height: 95%;width: 2%;}
+.section.official .list .imgs img{max-width: 90%;max-height: 90%;border-radius: 50%;vertical-align: middle;}
+.section.official .list .imgs .text{color: #fff;font-size: 0.28rem;width: ;font-weight: normal;line-height: 2.5;}
+.section.official .list .img01{top:-4.5%;left: 7vw;}
+.section.official .list .img02{top:-9.5%;right: 20%;}
+.section.official .list .img03{top:26.5%;left: 31%;}
+.section.official .list .img04{top:29.5%;right: 7%;}
+.section.official .list .img05{top:59.5%;left: 6%;}
+.section.official .list .img06{top:68.5%;right: 19%;}
+.section.official .list .img07{top:92%;left: 34%;}
+.section.official .text_list{color: #fff;font-size: 0.24rem;top: 0%;position: absolute;width: 100%;height: 100%;;}
+.section.official .text_list .txt{position: absolute;display: block;width: 1.6rem;}
+.section.official .text_list .txt01{left: -4%;top: -21%;}
+.section.official .text_list .txt02{left: 22%;top: -19%;}
+.section.official .text_list .txt03{left: 25%;top: 2%;}
+.section.official .text_list .txt04{left: -8%;top: 2%;}
+.section.official .text_list .txt05{right: 34%;top: -21%;}
+.section.official .text_list .txt06{right: -3%;top: -8%}
+.section.official .text_list .txt07{left: 14%;top: 23%;}
+.section.official .text_list .txt08{right: 20%;top: 15%;}
+.section.official .text_list .txt09{right: 21%;top: 39%;}
+.section.official .text_list .txt10{left: 22%;top: 52%;}
+.section.official .text_list .txt11{left: 22%;top: 71%;}
+.section.official .text_list .txt12{left: 42%;top: 70%;}
+.section.official .text_list .txt13{right: -4%;top: 67%;}
+.section.official .text_list .txt14{left: 34%;top: 81%;}
+.section.official .text_list .txt15{left: 14%;top:96%;}
+.section.official .text_list .txt16{right: 24%;top: 94%;}
+
+/*页面三 荣誉*/
+.section .content{margin-top: 4%;}
+.honor .title{text-align: center;margin: 0 auto;max-width: 2.7rem;}
+.honor #marquee {height: 8rem;overflow: hidden;margin-top: 8%;}
+.honor #marquee li{max-width: 7rem;text-align: center;margin: 0 auto;font-size: 0.28rem;color: #fff;line-height: 2;}
+.honor .imgs,.honor .title,.honor #marquee{opacity: 0;}
+/*页面四资质*/
+.qualification .imgs,.qualification .title,.qualification #marquee1{opacity: 0;}
+.qualification .title{text-align: center;margin: 0 auto;max-width: 2.7rem;}
+.qualification li{max-width: 7rem;text-align: center;margin: 0 auto;font-size: 0.28rem;color: #fff;line-height: 2;padding: 5px 0;}
+.qualification .sub-title{color: #89e5ff;font-size: 0.32rem;text-align: center;font-weight: 600;}
+.qualification .sub-title img{max-width: 50%;}
+.qualification .square{width: 12px;height: 12px;background: #89e5ff;transform: rotate(45deg);-webkit-transform:rotate(45deg); /* Safari 和 Chrome */display: inline-block;}
+.qualification #marquee1 {height: 8rem;overflow: hidden;margin-top: 8%;}
+.qualification #marquee1 .imgs{opacity: 1;}
+.qualification .imgs .img{width: 50%;display: inline-block;vertical-align: top;opacity: 1;}
+.qualification .imgs .img img{max-width: 80%;max-height: 80%;opacity: 1;}
+
+/*property*/
+.property .title{text-align: center;margin: 0 auto;max-width: 2.7rem;}
+.property .line{width: 100%;text-align: center;margin-top: 14vh;}
+.property .line img{max-width: 23%;;}
+.property .content .list{position: relative;}
+.property .content li{position: absolute;width: 3.2rem;}
+.property .content .imgs{position: absolute;}
+.property .content .text_list span{display: block;}
+.property .content .text_list{text-align: center;color: #fff;font-size: 0.28rem;line-height: 1.5;padding-top: 37%;}
+.property .content .num{font-size: 0.5rem;color: #fffc00;font-family: "Arial";font-weight: 600;}
+.property .content .li01{left: 2%;top: -31%;}
+.property .content .li02{ right: 3%;top: 1.5%;}
+.property .content .li03{left: 3%;top: 43%;}
+.property .content .li04{right: 4%;top: 78.5%;}
+.property .imgs,.property .line,.property .text_list,.property .title{opacity: 0;}
+/*more*/
+.more .content .title{position: relative;width:4.6rem;height: 4.6rem; text-align: center;margin: 0 auto;line-height: 5.4;text-align: center;}
+.more .content .title .bg{position: absolute;}
+.more .content .rule{display: inline-block;vertical-align: middle;height: 100%;width: 2%;}
+.more .content .title .erweima{width: 2rem;margin: 0 auto;}
+.more .content .mores{width: 60%;margin: 0 auto;margin-top: 5%;}
+.more .content .contact{max-width: 85%;margin:0 auto;margin-bottom: 5%;margin-top: 0.5rem;}
+.more .content  .text{max-width: 5rem;margin: 0 auto;color: #dee2e9;font-size: 0.28rem;font-weight: 500;font-family: normal;line-height: 1.2;font-family: "微软雅黑";text-shadow: 0 0 10px rgba(0,0,0,.4); }
+.more .content  .text01 img{max-width: 100%;;}
+.more .content  .text02 img{max-width: 59%}
+.more .content  .text03 img{max-width: 59%;}
+.more .content  .text04 img{max-width: 76%;}
+.more .content  .text .sort{font-weight: 500;vertical-align: top;}
+.more .content  .text .txt{display: inline-block;}
+.more .imgs,.more .title,.more .text{opacity: 0;}
+    /*iphoneX*/
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3){
+	.introduce .video{margin-top: 11vh;}
+	.section.official .list{margin-top: 16vh;}
+	.section.official .text_list{color: #fff;font-size: 0.24rem;top: 13%;position: absolute;width: 100%;height: 87%;;}
+	.section.official .text_list .txt01{left: -4%;top: 0%;}
+	.section.official .text_list .txt02{left: 22%;top: 3%;}
+	.section.official .text_list .txt03{left: 25%;top: 13%;}
+	.section.official .text_list .txt04{left: -8%;top: 13%;}
+	.section.official .text_list .txt05{right: 32%;top: 0%;}
+	.section.official .text_list .txt06{right: -3%;top: 9%}
+	.section.official .text_list .txt07{left: 14%;top: 24%;}
+	.section.official .text_list .txt08{right: 17%;top: 20%;}
+	.section.official .text_list .txt09{right: 21%;top: 32%;}
+	.section.official .text_list .txt10{left: 22%;top: 40%;}
+	.section.official .text_list .txt11{left: 22%;top: 48%;}
+	.section.official .text_list .txt12{left: 42%;top: 49%;}
+	.section.official .text_list .txt13{right: -3%;top: 45%;}
+	.section.official .text_list .txt14{left: 31%;top: 54%;}
+	.section.official .text_list .txt15{left: 14%;top: 59%;}
+	.section.official .text_list .txt16{right: 23%;top: 63%;}
+	.honor #marquee{height: 12rem;}
+	.qualification #marquee1{height: 12rem;}
+	.property .line{margin-top: 18vh;}
+}
+
+/*动画*/
+.introduce .ani-01{opacity: 1; animation: flipInX 1s linear;-webkit-animation: flipInX 1s linear ; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.introduce .ani-02{ animation: bounceIn 1s linear;-webkit-animation:bounceIn 1s linear ;animation-delay: 0.5s;-webkit-animation-delay: 0.5s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.introduce .ani-03{ animation: rotateIn 1s linear;-webkit-animation: rotateIn 1s linear ; animation-delay: 1.5s;-webkit-animation-delay: 1.5s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.introduce .ani-04{ animation: fadeInDown 1s linear;-webkit-animation: fadeInDown 1s linear;animation-delay: 2s;-webkit-animation-delay: 2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.introduce .ani-05{ animation: fadeInUp 1s linear;-webkit-animation:fadeInUp 1s linear;animation-delay: 2s;-webkit-animation-delay: 2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+/*页面二*/
+.section.official .ani-01{opacity: 1; animation: flipInX 1s linear;-webkit-animation:  flipInX 1s linear; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.section.official .ani-02{animation: zoomIn 1s linear;-webkit-animation: zoomIn 1s linear;animation-delay: 0.5s;-webkit-animation-delay:0.5s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-03{ animation: zoomIn 1s linear;-webkit-animation:zoomIn 1s linear ; animation-delay: .8s;-webkit-animation-delay:.8s ; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.section.official .ani-04{ animation: zoomIn 1s linear;-webkit-animation:zoomIn 1s linear ;animation-delay: 1s;-webkit-animation-delay:1s ; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-05{ animation: zoomIn 1s linear;-webkit-animation:zoomIn 1s linear ;animation-delay: 1.2s;-webkit-animation-delay:1.2s ; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-06{ animation: zoomIn 1s linear;-webkit-animation: zoomIn 1s linear;animation-delay: 1.4s;-webkit-animation-delay:1.4s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-07{ animation: zoomIn 1s linear;-webkit-animation: zoomIn 1s linear;animation-delay: 1.6s;-webkit-animation-delay:1.6s ; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-08{ animation: zoomIn 1s linear;-webkit-animation:zoomIn 1s linear ;animation-delay: 1.8s;-webkit-animation-delay:1.8s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-09{ animation: zoomIn 1s linear;-webkit-animation: zoomIn 1s linear;animation-delay: 2s;-webkit-animation-delay:2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-10{ animation:zoomIn 1s linear, ball01 3s infinite;-webkit-animation:zoomIn 1s linear, ball01 3s infinite ;animation-delay: 2.2s;-webkit-animation-delay:2.2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-11{ animation:zoomIn 1s linear, ball02 3s infinite;-webkit-animation:zoomIn 1s linear, ball02 3s infinite ;animation-delay: 2.4s;-webkit-animation-delay:2.4s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-12{ animation: zoomIn 1s linear, ball03 3s infinite;-webkit-animation: zoomIn 1s linear, ball03 3s infinite ;animation-delay: 2.6s;-webkit-animation-delay:2.6s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-13{ animation: zoomIn 1s linear, ball04 3s infinite;-webkit-animation:zoomIn 1s linear, ball04 3s infinite ;animation-delay: 2.8s;-webkit-animation-delay:2.8s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-14{ animation: zoomIn 1s linear, ball05 3s infinite;-webkit-animation:zoomIn 1s linear, ball05 3s infinite ;animation-delay: 2.6s;-webkit-animation-delay:2.6s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-15{ animation: zoomIn 1s linear, ball06 3s infinite;-webkit-animation: zoomIn 1s linear, ball06 3s infinite;animation-delay: 2.8s;-webkit-animation-delay:2.8s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-16{ animation: zoomIn 1s linear, ball07 3s infinite;-webkit-animation: zoomIn 1s linear, ball07 3s infinite ;animation-delay: 2.4s;-webkit-animation-delay:2.4s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.section.official .ani-17{ animation: zoomIn 1s linear, ball03 3s infinite;-webkit-animation:zoomIn 1s linear, ball03 3s infinite ;animation-delay: 2.6s;-webkit-animation-delay:2.6s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+/*页面三*/
+.honor .ani-01{opacity: 1; animation: flipInX 1s linear;-webkit-animation: flipInX 1s linear;animation-delay: 0s;-webkit-animation-delay:0s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.honor .ani-02{animation: bounceIn 1s linear;-webkit-animation:bounceIn 1s linear;animation-delay: .8s;-webkit-animation-delay:.8s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.honor .ani-03{animation: zoomInUp 1s linear;-webkit-animation:zoomInUp 1s linear ;animation-delay: 1.2s;-webkit-animation-delay:1.2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+/*页面四*/
+.qualification .ani-01{opacity: 1; animation: flipInX 1s linear;-webkit-animation:flipInX 1s linear ;animation-delay: 0s;-webkit-animation-delay:0s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.qualification .ani-02{animation: bounceIn 1s linear;-webkit-animation: bounceIn 1s linear;animation-delay: .8s;-webkit-animation-delay:.8s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.qualification .ani-03{animation: zoomInUp 1s linear;-webkit-animation: zoomInUp 1s linear;animation-delay: 1.2s;-webkit-animation-delay:1.2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.qualification .ani-04{ animation: zoomInLeft 1s linear;-webkit-animation:zoomInLeft 1s linear ;animation-delay: 1.8s;-webkit-animation-delay:1.8s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.qualification .ani-05{animation: ball01 2s infinite;-webkit-animation: ball01 2s infinite;animation-delay: 2s;-webkit-animation-delay:2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+/*页面五*/
+.property .ani-01{opacity: 1; animation: flipInX 1s linear;-webkit-animation: flipInX 1s linear;  animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.property .ani-02{animation: bounceIn 1s linear;-webkit-animation: bounceIn 1s linear;animation-delay: .8s;-webkit-animation-delay:.8s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.property .ani-03{animation: zoomIn 1s linear;-webkit-animation:zoomIn 1s linear ; animation-delay: 1s;-webkit-animation-delay:1s;  animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.property .ani-04{animation: rotate1 10s infinite ease-in-out;-webkit-animation: rotate1 10s infinite ease-in-out;-webkit-animation-delay: 1.5s;-webkit-animation-delay:1.5s ;animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.property .ani-05{animation: zoomIn 1s linear;-webkit-animation:zoomIn 1s linear ;animation-delay: 1.8s; animation-delay: 1.8s;-webkit-animation-delay:1.8s;animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.property .ani-06{animation:  rotate1 11s infinite ease-in-out;-webkit-animation: rotate1 11s infinite ease-in-out; animation-delay: 2s; -webkit-animation-delay: 2s;  animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.property .ani-07{animation: zoomIn 1s linear;-webkit-animation: zoomIn 1s linear;animation-delay: 2s;-webkit-animation-delay: 2s;  animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+.property .ani-08{animation:  rotate1 12s infinite ease-in-out;-webkit-animation: rotate1 12s infinite ease-in-out;animation-delay: 2.2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; -webkit-animation-delay: 2.2s; }
+.property .ani-09{animation:  zoomIn 1s linear;-webkit-animation:zoomIn 1s linear ;animation-delay: 2.2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; -webkit-animation-delay: 2.2s; }
+.property .ani-10{animation:  rotate1 9s infinite ease-in-out;-webkit-animation: rotate1 9s infinite ease-in-out;animation-delay: 2.4s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;-webkit-animation-delay: 2.4s; }
+.property .ani-11{animation:  zoomIn 1s linear;-webkit-animation: zoomIn 1s linear;animation-delay: 2.4s;-webkit-animation-delay: 2.4s;  animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards; }
+/*页面六*/
+.more .ani-01{opacity: 1; animation: flipInX 1s linear;-webkit-animation:flipInX 1s linear ;animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;} 
+.more .ani-02{animation:  bounceIn 1s linear;-webkit-animation: bounceIn 1s linear ;animation-delay: .8s;-webkit-animation-delay: .8s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.more .ani-03{animation: myrotate 12s infinite ease-in-out;-webkit-animation: myrotate 12s infinite ease-in-out;animation-delay: 2.2s;-webkit-animation-delay: 2.2s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.more .ani-04{animation:  rotateIn 1s linear;-webkit-animation: rotateIn 1s linear ;animation-delay: 2.4s;-webkit-animation-delay: 2.4s;animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.more .ani-05{animation:  fadeIn 1.2s linear;-webkit-animation: fadeIn 1.2s linear ;animation-delay: 2.6s;-webkit-animation-delay: 2.6s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.more .ani-06{animation:  zoomIn 1s linear;-webkit-animation: zoomIn 1s linear;animation-delay: 2.6s;-webkit-animation-delay: 2.6s; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.more .ani-07{animation:  rotateInDownLeft 1.2s linear;-webkit-animation:  rotateInDownLeft 1.2s linear;animation-delay: 2.6s;-webkit-animation-delay: 2.6s; animation-fill-mode: forwards;}
+.more .ani-08{animation:  rotateInDownRight 1s linear;-webkit-animation: rotateInDownRight 1s linear ; animation-delay: 2.8s;-webkit-animation-delay:2.8s ; animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+
+/*自定义动画*/
+@-webkit-keyframes upArrow{
+	0%,30%{opacity:1;-webkit-transform:translate(0,0);-webkit-transform:translate(0,0) ;}
+	60%{opacity:0;-webkit-transform:translate(0,10px);-webkit-transform: translate(0,10px);}
+	100%{opacity:1;-webkit-transform:translate(0,0);-webkit-transform: translate(0,0);}
+}
+
+@keyframes upArrow{
+	0%,30%{opacity:1;transform:translate(0,0);-webkit-transform: translate(0,0);}
+	60%{opacity:0;transform:translate(0,10px);-webkit-transform:translate(0,10px);}
+	100%{opacity:1;transform:translate(0,0);-webkit-transform:translate(0,0) ;}
+}
+@-webkit-keyframes upDown{
+	0%,30%{opacity:1;-webkit-transform:translate(0,0);-webkit-transform: translate(0,0);}
+	60%{opacity:1;-webkit-transform:translate(0,10px);-webkit-transform:translate(0,10px) ;}
+	100%{opacity:1;-webkit-transform:translate(0,0);-webkit-transform: translate(0,0);}
+}
+
+@keyframes upDown{
+	0%,30%{opacity:1;transform:translate(0,0);-webkit-transform:translate(0,0) ;}
+	60%{opacity:1;transform:translate(0,10px);-webkit-transform: translate(0,10px);}
+	100%{opacity:1;transform:translate(0,0);-webkit-transform:translate(0,0) ;}
+}
+@keyframes icon01{
+	0%{transform: translateX(-10px) rotate(-15deg);-webkit-transform:translateX(-10px) rotate(-15deg);}
+	50%{transform: translateX(0) rotate(-15deg);-webkit-transform:translateX(0px) rotate(-15deg);}
+	100%{transform: translateX(-10px) rotate(-15deg);-webkit-transform:translateX(-10px) rotate(-15deg);} 
+}
+@keyframes icon02{
+	0%{transform: translateY(-10px) rotate(15deg);-webkit-transform: translateY(-10px) rotate(15deg);}
+	50%{transform: translateY(0) rotate(15deg);-webkit-transform: translateY(0px) rotate(15deg);}
+	100%{transform: translateY(-10px) rotate(15deg);-webkit-transform: translateY(-10px) rotate(15deg);}
+}
+/*动画*/
+@keyframes ball01{
+	0%{transform: scale(1);-webkit-transform: scale(1);}
+	50%{transform: scale(1.05);-webkit-transform: scale(1.05);}
+	100%{transform: scale(1);-webkit-transform: scale(1);}
+}
+@-webkit-keyframes ball01{
+	0%{transform: scale(1);-webkit-transform: scale(1);}
+	50%{transform: scale(1.05);-webkit-transform: scale(1.05);}
+	100%{transform: scale(1);-webkit-transform: scale(1);}
+}
+@keyframes ball02{
+	0%{transform: translateX(-10px);-webkit-transform:translateX(-10px);}
+	50%{transform: translateX(0);-webkit-transform:translateX(0px);}
+	100%{transform: translateX(-10px);-webkit-transform:translateX(-10px);}
+}
+@-webkit-keyframes ball02{
+	0%{transform: translateX(-10px);-webkit-transform:translateX(-10px);}
+	50%{transform: translateX(0);-webkit-transform:translateX(0px);}
+	100%{transform: translateX(-10px);-webkit-transform:translateX(-10px);}
+}
+@keyframes ball03{
+	0%{transform: translateY(-10px);-webkit-transform: translateY(-10px);}
+	50%{transform: translateY(0);-webkit-transform: translateY(0px);}
+	100%{transform: translateY(-10px);-webkit-transform: translateY(-10px);}
+}
+@-webkit-keyframes ball03{
+	0%{transform: translateY(-10px);-webkit-transform: translateY(-10px);}
+	50%{transform: translateY(0);-webkit-transform: translateY(0px);}
+	100%{transform: translateY(-10px);-webkit-transform: translateY(-10px);}
+}
+@keyframes ball04{
+	0%{transform: translate(-10px,-10px);-webkit-transform: translate(-10px,-10px);}
+	50%{transform: translate(0,0);-webkit-transform:translate(0,0);}
+	100%{transform: translate(-10px,-10px);-webkit-transform: translate(-10px,-10px);}
+}
+@-webkit-keyframes ball04{
+	0%{transform: translate(-10px,-10px);-webkit-transform: translate(-10px,-10px);}
+	50%{transform: translate(0,0);-webkit-transform:translate(0,0);}
+	100%{transform: translate(-10px,-10px);-webkit-transform: translate(-10px,-10px);}
+}
+@keyframes ball05{
+	0%{transform: translate(10px,10px);-webkit-transform: translate(10px,10px);}
+	50%{transform: translate(0,0);-webkit-transform: translate(0px,0px);}
+	100%{transform: translate(10px,10px);-webkit-transform: translate(10px,10px);}
+}
+@-webkit-keyframes ball05{
+	0%{transform: translate(10px,10px);-webkit-transform: translate(10px,10px);}
+	50%{transform: translate(0,0);-webkit-transform: translate(0px,0px);}
+	100%{transform: translate(10px,10px);-webkit-transform: translate(10px,10px);}
+}
+@keyframes ball06{
+	0%{transform: translate(10px,-10px);-webkit-transform:translate(10px,-10px);}
+	50%{transform: translate(0,0);-webkit-transform:translate(0px,-0px);}
+	100%{transform: translate(10px,-10px);-webkit-transform:translate(10px,-10px);}
+}
+@-webkit-keyframes ball06{
+	0%{transform: translate(10px,-10px);-webkit-transform:translate(10px,-10px);}
+	50%{transform: translate(0,0);-webkit-transform:translate(0px,-0px);}
+	100%{transform: translate(10px,-10px);-webkit-transform:translate(10px,-10px);}
+}
+@keyframes ball07{
+	0%{transform: translateY(-10px);-webkit-transform:translateY(-10px);;}
+	50%{transform: translateY(0);-webkit-transform:translateY(0px);;}
+	100%{transform: translateY(-10px);-webkit-transform:translateY(-10px);;}
+}
+@-webkit-keyframes ball07{
+	0%{transform: translateY(-10px);-webkit-transform:translateY(-10px);;}
+	50%{transform: translateY(0);-webkit-transform:translateY(0px);;}
+	100%{transform: translateY(-10px);-webkit-transform:translateY(-10px);;}
+}
+@keyframes rotate1{
+    0%{opacity: 1; transform: rotate(0deg);transform-origin: 50% 48%}
+    100%{opacity: 1;transform: rotate(360deg);transform-origin:50% 48%}
+}
+@-webkit-keyframes rotate1{
+	0%{opacity: 1;transform: rotate(0deg);transform-origin: 48% 48%}
+    100%{opacity: 1;transform: rotate(360deg);transform-origin: 50% 48%}
+}
+/*动态*/
+
+@-webkit-keyframes myrotate {
+  0% {transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            -ms-transform: rotate(0deg); }
+
+  100% { transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg); }}
+@keyframes myrotate {
+		0% {transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            -ms-transform: rotate(0deg); }
+
+ 		 100% { transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg); }
+         }
+
